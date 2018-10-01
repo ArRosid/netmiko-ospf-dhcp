@@ -1,0 +1,84 @@
+CORE: 
+  - host: 192.168.122.11
+    int_config:
+      - interface: GigabitEthernet3
+        ip_address: 192.168.10.1 255.255.255.0
+      - interface: GigabitEthernet4
+        ip_address: 192.168.11.1 255.255.255.0
+      - interface: GigabitEthernet2
+        ip_address: 10.10.12.1 255.255.255.0
+    dhcp_config:
+      - pool: network10
+        network: 192.168.10.0 255.255.255.0
+        gateway: 192.168.10.1
+      - pool: network11
+        network: 192.168.11.0 255.255.255.0
+        gateway: 192.168.11.1
+    ospf_config:
+      - area: 0
+        network: 
+          - 10.10.12.1 0.0.0.255
+          - 192.168.10.0 0.0.0.255
+          - 192.168.11.0 0.0.0.255
+
+  - host: 192.168.122.12
+    int_config:
+      - interface: GigabitEthernet3
+        ip_address: 10.10.23.2 255.255.255.0
+      - interface: GigabitEthernet4
+        ip_address: 192.168.20.1 255.255.255.0
+      - interface: GigabitEthernet2
+        ip_address: 10.10.12.2 255.255.255.0
+    dhcp_config:
+      - pool: network20
+        network: 192.168.20.0 255.255.255.0
+        gateway: 192.168.20.1
+    ospf_config:
+      - area: 0
+        network: 
+          - 10.10.12.0 0.0.0.255
+          - 10.10.23.0 0.0.0.255
+          - 192.168.20.0 0.0.0.255
+
+  - host: 192.168.122.13
+    int_config:
+      - interface: GigabitEthernet3
+        ip_address: 10.10.34.3 255.255.255.0
+      - interface: GigabitEthernet4
+        ip_address: 192.168.30.1 255.255.255.0
+      - interface: GigabitEthernet2
+        ip_address: 10.10.23.3 255.255.255.0
+    dhcp_config:
+      - pool: network30
+        network: 192.168.30.0 255.255.255.0
+        gateway: 192.168.30.1
+    ospf_config:
+      - area: 0
+        network: 
+          - 10.10.23.0 0.0.0.255
+      - area: 1
+        network:
+          - 10.10.34.0 0.0.0.255
+          - 192.168.30.0 0.0.0.255
+
+  - host: 192.168.122.14
+    int_config:
+      - interface: GigabitEthernet3
+        ip_address: 192.168.40.1 255.255.255.0
+      - interface: GigabitEthernet4
+        ip_address: 192.168.41.1 255.255.255.0
+      - interface: GigabitEthernet2
+        ip_address: 10.10.34.4 255.255.255.0
+    dhcp_config:
+      - pool: network40
+        network: 192.168.40.0 255.255.255.0
+        gateway: 192.168.40.1
+      - pool: network41
+        network: 192.168.41.0 255.255.255.0
+        gateway: 192.168.41.1
+    ospf_config:
+      - area: 1
+        network:
+          - 192.168.40.0 0.0.0.255
+          - 192.168.41.0 0.0.0.255
+          - 10.10.34.0 0.0.0.255
