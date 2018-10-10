@@ -7,7 +7,7 @@ You can automate OSPF & DHCP Configuration with differents topologies using this
 
 <h3>Requires</h3>
 <ul>
-  <li>netmiko release 2.2.2 or later (tested with release [2.2.2](https://github.com/ktbyers/netmiko/releases/tag/v2.2.2))</li>
+  <li>netmiko release 2.2.2 or later</li>
 </ul>
 <h3>Supports</h3>
 <ul>
