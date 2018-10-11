@@ -1,3 +1,4 @@
+[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/arrosid/netconf-static-route)
 # Netmiko for OSPF & DHCP Automation
 Configure IP Address, DHCP Server and OSPF automatically using Netmiko
 
